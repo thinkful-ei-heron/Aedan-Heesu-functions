@@ -1,8 +1,7 @@
 'use strict';
 function yearOfBirth(age) {
-    if (age < 0)
-        throw new Error('Age cannot be negative!');
-
+  if (age < 0)
+    throw new Error('Age cannot be negative!');
   return 2019 - age;
 }
 
@@ -11,8 +10,12 @@ function createGreeting(name, age) {
 }
 
 try {
-    const greeting1 = createGreeting("Heesu", 25);
+  let name = 'Heesu';
+  let age = 25;
+  if (name !== undefined && age !== undefined){
+    const greeting1 = createGreeting(name, age);
     console.log(greeting1);
+  }else throw new Error('Arguments not valid');
 } catch(e) {
-    console.log(e);
+  console.log(e);
 }
